@@ -2,6 +2,8 @@
 @import "./variables.scss"; // Import variables
 @import "../components/Navbar/_Navbar.module.scss";
 @import "../pages/HomePage/_HomePage.module.scss";
+@import "../components/RegistrationForm/_RegistrationForm.module.scss";
+@import "../components/UserDropdown/_UserDropdown.module.scss";
 
 /* Basic Reset (you can expand this) */
 *,

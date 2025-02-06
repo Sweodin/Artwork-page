@@ -1,32 +1,55 @@
 // src/components/Navbar/Navbar.tsx
 import React from "react";
-import styles from "./_Navbar.module.scss"; // Import CSS module
+import styles from "./_Navbar.module.scss";
+import UserDropdown from "../UserDropdown/UserDropdown";
+import RegistrationForm from "../RegistrationForm/RegistrationForm";
+import useNavbarState from "../../hooks/useNavbarstate";
 
 const Navbar: React.FC = () => {
+  const {
+    isDropdownOpen,
+    showRegistrationForm,
+    toggleDropdown,
+    handleRegisterClick,
+    handleLoginClick,
+    closeDropdown,
+    closeRegistrationForm,
+  } = useNavbarState(); /*----- Use the custom hooks -----*/
+
   return (
     <nav className={styles.navbar}>
       <div className={styles.container}>
         <div className={styles.logo}>
-          {/* Replace with your actual logo component or image */}
+          {" "}
+          {/* Logo is here */}
           <a href="/">My Artwork</a>
         </div>
         <div className={styles.searchBar}>
-          {/* Placeholder for search bar */}
+          {" "}
+          {/* Search bar is here */}
           <input type="text" placeholder="Search artwork..." />
           <button>Search</button>
         </div>
+        {/* ... Navbar content ... */}
         <ul className={styles.navLinks}>
-          <li>
-            <a href="/about">About Us</a>
-          </li>
+          {/* ... other nav links ... */}
           <li className={styles.userIcon}>
-            {/* Placeholder for user icon */}
-            <button>
-              <i className="fas fa-user-circle"></i>{" "}
-              {/* Example icon - you might need to include Font Awesome or similar */}
-              <span>User</span> {/* Placeholder text */}
+            <button onClick={toggleDropdown}>
+              <i className="fas fa-user-circle"></i>
+              <span>User</span>
             </button>
-            {/* Placeholder for user dropdown/popup - will implement later */}
+            {isDropdownOpen && !showRegistrationForm && (
+              <UserDropdown
+                onLoginClick={handleLoginClick}
+                onRegisterClick={handleRegisterClick}
+                onClose={closeDropdown}
+              />
+            )}
+            {showRegistrationForm && (
+              <RegistrationForm
+                onClose={closeRegistrationForm}
+              /> /*----- Pass onClose prop -----*/
+            )}
           </li>
         </ul>
       </div>

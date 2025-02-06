@@ -1,16 +1,15 @@
-// src/components/Navbar/Navbar.module.scss
-@import "../../styles/_variables.scss"; // Import variables from global styles
+@import "../../styles/_variables.scss"; /*----- Import variables from global styles -----*/
 
 .navbar {
-  background-color: $white; // Example background color from variables
-  padding: 1rem 2rem;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); // Subtle shadow
+  background-color: $white; /*----- Example background color from variables -----*/
+  padding: 1.5rem 2.5rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /*----- Subtle shadow -----*/
 
   .container {
     max-width: 1200px;
     margin: 0 auto;
     display: flex;
-    justify-content: space-between; // Space out logo and nav links
+    justify-content: space-between; /*----- Space out logo and nav links -----*/
     align-items: center;
   }
 }
@@ -20,7 +19,7 @@
   font-weight: bold;
   a {
     text-decoration: none;
-    color: $black; // Example color from variables
+    color: $black; /*----- Example color from variables -----*/
   }
 }
 
@@ -29,16 +28,20 @@
   input[type="text"] {
     padding: 0.5rem;
     border: 1px solid $medium-grey;
-    border-radius: 4px 0 0 4px; // Rounded left corners
-    border-right: none; // Remove right border to join with button
+    border-radius: 4px 0 0 4px; /*----- Rounded left corners -----*/
+    border-right: none; /*----- Remove right border to join with button -----*/
   }
   button {
     padding: 0.5rem 1rem;
-    background-color: $primary-blue; // Example color from variables
+    background-color: $primary-blue; /*----- Example color from variables -----*/
     color: $white;
     border: none;
-    border-radius: 0 4px 4px 0; // Rounded right corners
+    border-radius: 0 4px 4px 0; /*----- Rounded right corners -----*/
     cursor: pointer;
+    &:hover {
+      background-color: $secondary-blue; /* Example hover color */
+      transition: all 0.3s ease;
+    }
   }
 }
 
@@ -46,19 +49,21 @@
   list-style: none;
   display: flex;
   align-items: center;
-  gap: 2rem; // Spacing between nav links
+  gap: 2rem; /*----- Spacing between nav links -----*/
 
   li {
     a {
       text-decoration: none;
-      color: $text-color-dark; // Example color from variables
+      color: $text-color-dark; /*----- Example color from variables -----*/
       &:hover {
-        color: $primary-blue; // Example hover color
+        color: $primary-blue; /* Example hover color */
+        transition: all 0.3s ease;
       }
     }
   }
 
   .userIcon {
+    position: relative; /*----- Add position relative here -----*/
     button {
       background: none;
       border: none;
@@ -67,12 +72,12 @@
       align-items: center;
       gap: 0.5rem;
       font-size: 1rem;
-      color: $text-color-dark; // Example color from variables
+      color: $text-color-dark;
       &:hover {
-        color: $primary-blue; // Example hover color
+        color: $primary-blue;
       }
       i {
-        font-size: 1.2rem; // Example icon size
+        font-size: 1.2rem;
       }
     }
   }
