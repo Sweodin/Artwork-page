@@ -1,0 +1,79 @@
+// src/components/Navbar/Navbar.module.scss
+@import "../../styles/_variables.scss"; // Import variables from global styles
+
+.navbar {
+  background-color: $white; // Example background color from variables
+  padding: 1rem 2rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); // Subtle shadow
+
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between; // Space out logo and nav links
+    align-items: center;
+  }
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+  a {
+    text-decoration: none;
+    color: $black; // Example color from variables
+  }
+}
+
+.searchBar {
+  display: flex;
+  input[type="text"] {
+    padding: 0.5rem;
+    border: 1px solid $medium-grey;
+    border-radius: 4px 0 0 4px; // Rounded left corners
+    border-right: none; // Remove right border to join with button
+  }
+  button {
+    padding: 0.5rem 1rem;
+    background-color: $primary-blue; // Example color from variables
+    color: $white;
+    border: none;
+    border-radius: 0 4px 4px 0; // Rounded right corners
+    cursor: pointer;
+  }
+}
+
+.navLinks {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  gap: 2rem; // Spacing between nav links
+
+  li {
+    a {
+      text-decoration: none;
+      color: $text-color-dark; // Example color from variables
+      &:hover {
+        color: $primary-blue; // Example hover color
+      }
+    }
+  }
+
+  .userIcon {
+    button {
+      background: none;
+      border: none;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 1rem;
+      color: $text-color-dark; // Example color from variables
+      &:hover {
+        color: $primary-blue; // Example hover color
+      }
+      i {
+        font-size: 1.2rem; // Example icon size
+      }
+    }
+  }
+}

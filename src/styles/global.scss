@@ -1,0 +1,22 @@
+// src/styles/global.scss
+@import "./variables.scss"; // Import variables
+@import "../components/Navbar/_Navbar.module.scss";
+@import "../pages/HomePage/_HomePage.module.scss";
+
+/* Basic Reset (you can expand this) */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: sans-serif; /* Or your preferred font-family */
+  background-color: $light-grey; /* Example: Light grey background */
+  color: $text-color-dark; /* Example: Dark grey text color */
+  line-height: 1.5;
+}
+
+/* You can add more global styles here, like for headings, links, etc. */
