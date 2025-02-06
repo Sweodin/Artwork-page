@@ -1,14 +1,13 @@
 // src/components/HomePage/FilterBar.tsx
 import React from "react";
-import styles from "./_HomePage.module.scss";
+import styles from "./_FilterBar.module.scss";
 
 interface FilterBarProps {
-  onFilterChange?: (filter: string) => void;
-  /*----- Optional function to handle filter changes -----*/
+  onFilterChange?: (filter: string) => void; // Optional function to handle filter changes
 }
 
 const FilterBar: React.FC<FilterBarProps> = ({ onFilterChange }) => {
-  const filters = ["All", "Abstract", "Nature", "Portraits", "Ai-Generateds"]; // Example filters
+  const filters = ["All", "Abstract", "Nature", "Portraits", "Digital"]; // Example filters
   const [activeFilter, setActiveFilter] = React.useState<string>("All"); // State to track active filter
 
   const handleFilterClick = (filter: string) => {
@@ -28,7 +27,12 @@ const FilterBar: React.FC<FilterBarProps> = ({ onFilterChange }) => {
               activeFilter === filter ? styles.active : ""
             }`}
           >
-            <button onClick={() => handleFilterClick(filter)}>{filter}</button>
+            <button
+              className={styles.filterButton}
+              onClick={() => handleFilterClick(filter)}
+            >
+              {filter}
+            </button>
           </li>
         ))}
       </ul>

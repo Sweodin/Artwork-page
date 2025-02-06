@@ -1,63 +1,22 @@
 /* // src/pages/HomePage/HomePage.module.scss */
-@import "../../styles/_variables.scss"; // Import variables
+@import "../../styles/_variables.scss";
 
 .homePage {
   padding: 3rem;
-  max-width: 1200px;
   margin: 0 auto;
+  min-height: calc(
+    100vh - 6rem
+  ); /* Adjust the height to account for header and footer */
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+
   align-items: center;
 }
 
 .headline {
-  font-size: 1.5rem;
-  color: $primary-green; // Example color from variables
-  margin-bottom: 1rem;
-  display: flex;
-  justify-content: center;
-}
-
-.filterBar {
-  padding: 1rem 0;
-  border-bottom: 1px solid $light-grey;
-  margin-bottom: 1.5rem;
-}
-
-.filterList {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  display: flex;
-  gap: 1rem;
-}
-
-.filterItem {
-  .filterButton {
-    padding: 0.5rem 1rem;
-    border: 1px solid $medium-grey;
-    border-radius: 20px;
-    background-color: $white;
-    color: $text-color-dark;
-    cursor: pointer;
-    transition: background-color 0.2s, color 0.2s;
-    &:hover {
-      background-color: $light-grey;
-    }
-  }
-
-  &.active {
-    .filterButton {
-      background-color: $primary-blue;
-      color: $white;
-      border-color: $primary-blue;
-      &:hover {
-        background-color: $secondary-blue;
-        transition: all 0.3s ease;
-      }
-    }
-  }
+  text-align: center;
+  margin-bottom: 2rem;
+  color: $primary-blue; /* Example: Blue headline */
 }
 
 .artworkGrid {

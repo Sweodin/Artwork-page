@@ -8,6 +8,7 @@ const Headline: React.FC = () => {
       {" "}
       {/* Use HomePage.module.scss for styling consistency, or create Headline.module.scss if needed */}
       <h1>Welcome to My Artwork Gallery</h1>
+      <p>Discover a world of creativity and inspirsation.</p>
     </div>
   );
 };

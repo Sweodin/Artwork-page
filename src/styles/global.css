@@ -80,56 +80,17 @@
 /* // src/pages/HomePage/HomePage.module.scss */
 .homePage {
   padding: 3rem;
-  max-width: 1200px;
   margin: 0 auto;
+  min-height: calc(100vh - 6rem); /* Adjust the height to account for header and footer */
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
   align-items: center;
 }
 
 .headline {
-  font-size: 1.5rem;
-  color: #2ecc71;
-  margin-bottom: 1rem;
-  display: flex;
-  justify-content: center;
-}
-
-.filterBar {
-  padding: 1rem 0;
-  border-bottom: 1px solid #ecf0f1;
-  margin-bottom: 1.5rem;
-}
-
-.filterList {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  display: flex;
-  gap: 1rem;
-}
-
-.filterItem .filterButton {
-  padding: 0.5rem 1rem;
-  border: 1px solid #7f8c8d;
-  border-radius: 20px;
-  background-color: #ffffff;
-  color: #34495e;
-  cursor: pointer;
-  transition: background-color 0.2s, color 0.2s;
-}
-.filterItem .filterButton:hover {
-  background-color: #ecf0f1;
-}
-.filterItem.active .filterButton {
-  background-color: #3498db;
-  color: #ffffff;
-  border-color: #3498db;
-}
-.filterItem.active .filterButton:hover {
-  background-color: #2980b9;
-  transition: all 0.3s ease;
+  text-align: center;
+  margin-bottom: 2rem;
+  color: #3498db; /* Example: Blue headline */
 }
 
 .artworkGrid {
