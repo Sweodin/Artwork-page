@@ -1,6 +1,8 @@
 // src/components/Navbar/Navbar.tsx
 import React from "react";
 import styles from "./_Navbar.module.scss";
+import LogoSrc from "../../assets/TLT-Logo.png";
+import { FaSearch, FaUserCircle } from "react-icons/fa";
 import UserDropdown from "../UserDropdown/UserDropdown";
 import RegistrationForm from "../RegistrationForm/RegistrationForm";
 import useNavbarState from "../../hooks/useNavbarstate";
@@ -20,23 +22,22 @@ const Navbar: React.FC = () => {
     <nav className={styles.navbar}>
       <div className={styles.container}>
         <div className={styles.logo}>
-          {" "}
-          {/* Logo is here */}
-          <a href="/">My Artwork</a>
+          <img src={LogoSrc} alt="Twin logic tech logo" />
         </div>
         <div className={styles.searchBar}>
           {" "}
           {/* Search bar is here */}
           <input type="text" placeholder="Search artwork..." />
-          <button>Search</button>
+          <button aria-label="Search">
+            <FaSearch />
+          </button>
         </div>
         {/* ... Navbar content ... */}
         <ul className={styles.navLinks}>
           {/* ... other nav links ... */}
           <li className={styles.userIcon}>
             <button onClick={toggleDropdown}>
-              <i className="fas fa-user-circle"></i>
-              <span>User</span>
+              <FaUserCircle size="1.5em" />
             </button>
             {isDropdownOpen && !showRegistrationForm && (
               <UserDropdown

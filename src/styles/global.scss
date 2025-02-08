@@ -1,9 +1,10 @@
 // src/styles/global.scss
-@import "./variables.scss"; // Import variables
-@import "../components/Navbar/_Navbar.module.scss";
-@import "../pages/HomePage/_HomePage.module.scss";
-@import "../components/RegistrationForm/_RegistrationForm.module.scss";
-@import "../components/UserDropdown/_UserDropdown.module.scss";
+@use "_variables.scss"; // Import variables
+@use "../components/Navbar/_Navbar.module.scss";
+@use "../pages/HomePage/_HomePage.module.scss";
+@use "../components/RegistrationForm/_RegistrationForm.module.scss";
+@use "../components/UserDropdown/_UserDropdown.module.scss";
+@use "../pages/HomePage/_FilterBar.module.scss";
 
 /* Basic Reset (you can expand this) */
 *,
@@ -16,8 +17,8 @@
 
 body {
   font-family: sans-serif; /* Or your preferred font-family */
-  background-color: $light-grey; /* Example: Light grey background */
-  color: $text-color-dark; /* Example: Dark grey text color */
+  background-color: variables.$light-grey; /* Example: Light grey background */
+  color: variables.$text-color-dark; /* Example: Dark grey text color */
   line-height: 1.5;
 }
 

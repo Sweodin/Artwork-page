@@ -1,16 +1,16 @@
 // src/components/HomePage/FilterBar.module.scss
-@import "../../styles/_variables.scss";
+@use "../../styles/_variables.scss";
 
 .filterBar {
   padding: 1.5rem 0; /*----- Increased padding -----*/
   margin-bottom: 2rem; /*----- Increased margin -----*/
-  background-color: $white; /*----- White background for the filter bar section -----*/
+  background-color: variables.$white; /*----- White background for the filter bar section -----*/
   border-radius: 8px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /*----- Subtle shadow for depth -----*/
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
   width: 100%;
-  max-width: 1200px; /*----- Match your container width -----*/
+  max-width: 1200px;
   display: flex;
-  justify-content: center; /*----- Center the filter buttons -----*/
+  justify-content: center;
 }
 
 .filterList {
@@ -26,8 +26,8 @@
     padding: 0.7rem 1.5rem; /*----- Increased button padding -----*/
     border: none; /*----- Remove default border -----*/
     border-radius: 25px; /*----- More rounded buttons -----*/
-    background-color: $primary-green; /*----- Green for default button state -----*/
-    color: $white;
+    background-color: variables.$primary-green; /*----- Green for default button state -----*/
+    color: variables.$white;
     cursor: pointer;
     font-weight: 500;
     transition: transform 0.2s, box-shadow 0.2s; /*----- Smooth transition for effects -----*/
@@ -35,7 +35,7 @@
 
     &:hover {
       background-color: (
-        $primary-green,
+        variables.$primary-green,
         5%
       ); /*----- Lighter green on hover -----*/
       transform: translateY(-2px); /*----- Slight lift effect on hover -----*/
@@ -49,12 +49,12 @@
   }
 
   &.active .filterButton {
-    background-color: $primary-blue; /*----- Blue for active filter -----*/
-    color: $white;
+    background-color: variables.$primary-blue; /*----- Blue for active filter -----*/
+    color: variables.$white;
     box-shadow: 0 3px 4px rgba(0, 0, 0, 0.3); /*----- Slightly stronger shadow for active state -----*/
     &:hover {
       background-color: (
-        $primary-blue,
+        variables.$primary-blue,
         5%
       ); /*----- Lighter blue on hover for active -----*/
     }

@@ -3,6 +3,7 @@
   background-color: #ffffff; /*----- Example background color from variables -----*/
   padding: 1.5rem 2.5rem;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /*----- Subtle shadow -----*/
+  margin-bottom: 2rem;
 }
 .navbar .container {
   max-width: 1200px;
@@ -13,33 +14,47 @@
 }
 
 .logo {
-  font-size: 1.5rem;
-  font-weight: bold;
+  width: auto; /* Adjust as needed, or use a fixed width like '150px' */
+  height: auto; /* Maintain aspect ratio, or set a fixed height like '50px' */
+  max-width: 50px; /* Example max width to prevent it from getting too large */
+  max-height: 50px; /* Example max height */
+  display: flex; /* Use flexbox to center the image inside if needed */
+  align-items: center; /* Vertically center the image */
 }
-.logo a {
-  text-decoration: none;
-  color: #2c3e50; /*----- Example color from variables -----*/
+.logo img {
+  display: block; /* Ensure image behaves as a block element */
+  max-width: 100%; /* Image should not exceed container width */
+  max-height: 100%; /* Image should not exceed container height */
+  height: auto; /* Maintain image aspect ratio */
 }
 
 .searchBar {
   display: flex;
+  width: 400px;
+  margin: 0 1.5rem;
 }
 .searchBar input[type=text] {
+  flex-grow: 1;
   padding: 0.5rem;
   border: 1px solid #7f8c8d;
-  border-radius: 4px 0 0 4px; /*----- Rounded left corners -----*/
+  border-radius: 5px 0 0 5px; /*----- Rounded left corners -----*/
   border-right: none; /*----- Remove right border to join with button -----*/
 }
 .searchBar button {
   padding: 0.5rem 1rem;
-  background-color: #3498db; /*----- Example color from variables -----*/
-  color: #ffffff;
-  border: none;
-  border-radius: 0 4px 4px 0; /*----- Rounded right corners -----*/
+  background-color: #ecf0f1; /*----- Example color from variables -----*/
+  color: #34495e;
+  border: 1px solid #7f8c8d;
+  border-left: none;
+  border-radius: 0 5px 5px 0; /*----- Rounded right corners -----*/
   cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.2s;
 }
 .searchBar button:hover {
-  background-color: #2980b9; /* Example hover color */
+  background-color: #2980b9, 5%; /* Example hover color */
   transition: all 0.3s ease;
 }
 
@@ -58,23 +73,26 @@
   transition: all 0.3s ease;
 }
 .navLinks .userIcon {
-  position: relative; /*----- Add position relative here -----*/
-}
-.navLinks .userIcon button {
-  background: none;
-  border: none;
+  position: absolute;
+  text-align: center;
   cursor: pointer;
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-  font-size: 1rem;
+  padding: 0.5rem;
+  border-radius: 50%;
+  transition: background-color 0.2s;
   color: #34495e;
 }
-.navLinks .userIcon button:hover {
-  color: #3498db;
+.navLinks .userIcon ul {
+  list-style: none;
 }
-.navLinks .userIcon button i {
-  font-size: 1.2rem;
+.navLinks .userIcon:hover {
+  background-color: #ecf0f1;
+}
+.navLinks .userIcon button {
+  background: none; /* Remove button background */
+  border: none; /* Remove button border */
+  padding: 0; /* Remove button padding */
+  cursor: pointer; /* Ensure cursor is still pointer */
+  color: inherit; /* Inherit color from parent (.userIcon) */
 }
 
 /* // src/pages/HomePage/HomePage.module.scss */
@@ -124,9 +142,9 @@
   background-color: #ffffff;
   padding: 2rem; /*----- Increased padding for popup -----*/
   border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /*----- More pronounced shadow for popup -----*/
-  width: 400px; /*----- Wider for popup -----*/
-  z-index: 1000; /*----- High z-index to ensure it's on top -----*/
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  width: 400px;
+  z-index: 1000;
 }
 
 .registrationForm {
@@ -169,17 +187,29 @@
   background-color: #27ae60;
 }
 
+.closeButton {
+  position: absolute;
+  top: 0.5rem;
+  right: 0.5rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 1.2rem;
+  color: #f1c40f;
+}
+
 .dropdown {
   position: absolute; /*----- Position it relative to the user icon button -----*/
   top: 100%; /*----- Position below the button -----*/
   right: 0;
-  background-color: #ffffff;
+  background-color: #3498db;
   border: 1px solid #7f8c8d;
-  border-radius: 4px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
   padding: 0.5rem 0;
   min-width: 150px;
   z-index: 10; /*----- Ensure it's above other content -----*/
+  padding: 0.5rem 0;
 }
 
 .closeButton {
@@ -190,26 +220,72 @@
   border: none;
   cursor: pointer;
   font-size: 1rem;
-  color: #34495e;
+  color: #f1c40f !important;
 }
 
-.menu {
+.dropdownItem {
+  padding: 0.7rem 1.2rem;
+  cursor: pointer;
+  color: #34495e; /* Dark text color for dropdown items */
+  transition: background-color 0.2s;
+  font-weight: 500;
+}
+.dropdownItem:hover {
+  background-color: #ecf0f1; /* Light grey background on hover */
+}
+
+.separator {
+  border-top: 1px solid #7f8c8d;
+  margin: 0.5rem 0;
+}
+
+.filterBar {
+  padding: 1.5rem 0; /*----- Increased padding -----*/
+  margin-bottom: 2rem; /*----- Increased margin -----*/
+  background-color: #ffffff; /*----- White background for the filter bar section -----*/
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 1200px;
+  display: flex;
+  justify-content: center;
+}
+
+.filterList {
   list-style: none;
   padding: 0;
   margin: 0;
+  display: flex;
+  gap: 1.2rem; /*----- Slightly increased gap -----*/
 }
-.menu .menuItem button {
-  display: block; /*----- Make buttons full width of list item -----*/
-  width: 100%;
-  padding: 0.7rem 1.5rem;
-  text-align: left;
-  background: none;
-  border: none;
-  color: #34495e;
+
+.filterItem .filterButton {
+  padding: 0.7rem 1.5rem; /*----- Increased button padding -----*/
+  border: none; /*----- Remove default border -----*/
+  border-radius: 25px; /*----- More rounded buttons -----*/
+  background-color: #2ecc71; /*----- Green for default button state -----*/
+  color: #ffffff;
   cursor: pointer;
+  font-weight: 500;
+  transition: transform 0.2s, box-shadow 0.2s; /*----- Smooth transition for effects -----*/
+  box-shadow: 0 2px 3px rgba(0, 0, 0, 0.2); /*----- Subtle shadow for button lift -----*/
 }
-.menu .menuItem button:hover {
-  background-color: #ecf0f1;
+.filterItem .filterButton:hover {
+  background-color: #2ecc71, 5%; /*----- Lighter green on hover -----*/
+  transform: translateY(-2px); /*----- Slight lift effect on hover -----*/
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /*----- Enhanced shadow on hover -----*/
+}
+.filterItem .filterButton:active {
+  transform: translateY(0); /*----- No lift when active/pressed -----*/
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2); /*----- Reduced shadow when active -----*/
+}
+.filterItem.active .filterButton {
+  background-color: #3498db; /*----- Blue for active filter -----*/
+  color: #ffffff;
+  box-shadow: 0 3px 4px rgba(0, 0, 0, 0.3); /*----- Slightly stronger shadow for active state -----*/
+}
+.filterItem.active .filterButton:hover {
+  background-color: #3498db, 5%; /*----- Lighter blue on hover for active -----*/
 }
 
 /* Basic Reset (you can expand this) */

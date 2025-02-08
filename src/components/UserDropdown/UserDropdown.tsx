@@ -1,5 +1,6 @@
 // src/components/UserDropdown/UserDropdown.tsx
 import React from "react";
+import { FaTimes } from "react-icons/fa";
 import styles from "./_UserDropdown.module.scss";
 
 interface UserDropdownProps {
@@ -16,8 +17,7 @@ const UserDropdown: React.FC<UserDropdownProps> = ({
   return (
     <div className={styles.dropdown}>
       <button className={styles.closeButton} onClick={onClose}>
-        <i className="fas fa-times"></i>{" "}
-        {/* Example close icon - Font Awesome */}
+        <FaTimes /> {/* Example close icon - Font Awesome */}
       </button>
       <ul className={styles.menu}>
         <li className={styles.menuItem}>

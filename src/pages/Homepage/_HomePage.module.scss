@@ -1,5 +1,5 @@
 /* // src/pages/HomePage/HomePage.module.scss */
-@import "../../styles/_variables.scss";
+@use "../../styles/_variables.scss";
 
 .homePage {
   padding: 3rem;
@@ -16,7 +16,7 @@
 .headline {
   text-align: center;
   margin-bottom: 2rem;
-  color: $primary-blue; /* Example: Blue headline */
+  color: variables.$primary-blue; /* Example: Blue headline */
 }
 
 .artworkGrid {
@@ -27,7 +27,7 @@
   ); /* // Responsive grid */
   gap: 1.5rem;
   // Just for placeholder visualization:
-  background-color: $light-grey;
+  background-color: variables.$light-grey;
   padding: 1.5rem;
   border-radius: 8px;
 }

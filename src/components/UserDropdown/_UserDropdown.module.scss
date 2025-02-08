@@ -1,16 +1,17 @@
-@import "../../styles/_variables.scss";
+@use "../../styles/_variables.scss";
 
 .dropdown {
   position: absolute; /*----- Position it relative to the user icon button -----*/
   top: 100%; /*----- Position below the button -----*/
   right: 0;
-  background-color: $white;
-  border: 1px solid $medium-grey;
-  border-radius: 4px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  background-color: variables.$primary-blue;
+  border: 1px solid variables.$medium-grey;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
   padding: 0.5rem 0;
   min-width: 150px;
   z-index: 10; /*----- Ensure it's above other content -----*/
+  padding: 0.5rem 0;
 }
 
 .closeButton {
@@ -21,27 +22,22 @@
   border: none;
   cursor: pointer;
   font-size: 1rem;
-  color: $text-color-dark;
+  color: variables.$primary-yellow !important;
 }
 
-.menu {
-  list-style: none;
-  padding: 0;
-  margin: 0;
+.dropdownItem {
+  padding: 0.7rem 1.2rem;
+  cursor: pointer;
+  color: variables.$text-color-dark; /* Dark text color for dropdown items */
+  transition: background-color 0.2s;
+  font-weight: 500;
 
-  .menuItem {
-    button {
-      display: block; /*----- Make buttons full width of list item -----*/
-      width: 100%;
-      padding: 0.7rem 1.5rem;
-      text-align: left;
-      background: none;
-      border: none;
-      color: $text-color-dark;
-      cursor: pointer;
-      &:hover {
-        background-color: $light-grey;
-      }
-    }
+  &:hover {
+    background-color: variables.$light-grey; /* Light grey background on hover */
   }
+}
+
+.separator {
+  border-top: 1px solid variables.$medium-grey;
+  margin: 0.5rem 0;
 }
